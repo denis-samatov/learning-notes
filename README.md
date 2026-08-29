@@ -1,80 +1,41 @@
 # PySpark Learning
 
-This repository is dedicated to learning PySpark. It contains Jupyter notebooks, datasets, and scripts to help you get started with PySpark.
+A collection of focused, single-topic Jupyter notebooks covering PySpark DataFrame
+operations — each notebook is a short, runnable example of one specific transformation
+or pattern, rather than one long tutorial.
 
 ## Structure
 
-- `notebooks/` - Jupyter notebooks for interactive learning.
-- `data/` - Datasets used in the notebooks.
-- `scripts/` - Python scripts for various PySpark tasks.
-- `requirements.txt` - Python dependencies.
+- `notebooks/` — one notebook per PySpark topic (see below).
 
-## Getting Started
+## Topics covered
 
-### Prerequisites
+- **DataFrame basics**: creating DataFrames from Python lists/dicts, converting
+  pandas ↔ PySpark DataFrames.
+- **Column operations**: adding/casting columns, string ↔ double conversion,
+  array/string handling, `ArrayType` columns.
+- **Aggregation & counting**: `count_distinct`, aggregate functions, broadcasting a
+  DataFrame for join optimization.
+- **Maps & structs**: converting columns to a map and back.
+- **Date handling**: current date, adding months to a date column.
 
-Make sure you have Python installed. You can download it from [python.org](https://www.python.org/).
-
-### Installation
+## Getting started
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/YOUR_USERNAME/pyspark-learning.git
-    cd pyspark-learning
+    git clone https://github.com/denis-samatov/pyspark_learning.git
+    cd pyspark_learning
     ```
-
-2. It is recommended to use a virtual environment to manage dependencies. You can create and activate a virtual environment using the following commands:
-
+2. Install PySpark and Jupyter:
     ```sh
     python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    source venv/bin/activate  # Windows: venv\Scripts\activate
+    pip install pyspark jupyter pandas
     ```
-
-3. Install the dependencies:
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-### Usage
-
-1. Start Jupyter Notebook:
+3. Launch Jupyter and open any notebook in `notebooks/`:
     ```sh
     jupyter notebook
     ```
 
-2. Open the notebooks in the `notebooks/` directory to begin learning.
-
-### Project Structure
-
-- `notebooks/` - This directory contains Jupyter notebooks for interactive learning. You will find notebooks covering various PySpark topics and exercises.
-- `data/` - This directory is intended for datasets used in the notebooks. Add any datasets you need for your exercises here.
-- `scripts/` - This directory contains standalone Python scripts demonstrating various PySpark functionalities.
-- `requirements.txt` - This file lists the Python dependencies required for this project.
-
-### Example Notebooks
-
-- `notebooks/01-getting-started-with-pyspark.ipynb` - An introductory notebook for setting up and running PySpark.
-- `notebooks/02-data-manipulation-with-pyspark.ipynb` - A notebook demonstrating basic data manipulation with PySpark DataFrames.
-- `notebooks/03-advanced-pyspark-functions.ipynb` - A notebook covering advanced functions and transformations in PySpark.
-
-### Contributing
-
-If you would like to contribute to this project, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -am 'Add new feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Create a new Pull Request.
-
-### License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-### Acknowledgments
-
-- [PySpark Documentation](https://spark.apache.org/docs/latest/api/python/)
-- [Jupyter Project](https://jupyter.org/)
-
-Happy Learning!
+Each notebook is self-contained — start with `pyspark_create_dataframe.ipynb` if
+you're new to PySpark, then explore the rest in any order.
