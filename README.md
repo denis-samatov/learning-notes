@@ -42,6 +42,6 @@ a few core elements:
 ## Examples
 
 This repository contains examples of using DEAP for function optimization —
-[`genetic_algoritm_1.ipynb`](genetic_algoritm_1.ipynb) and
+[`genetic_algorithm_1.ipynb`](genetic_algorithm_1.ipynb) and
 [`genetic_algorithm_2.ipynb`](genetic_algorithm_2.ipynb). Walk through the notebooks to
 see the principles above applied in practice.
