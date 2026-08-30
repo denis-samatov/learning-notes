@@ -10,14 +10,13 @@ or pattern, rather than one long tutorial.
 
 ## Topics covered
 
-- **DataFrame basics**: creating DataFrames from Python lists/dicts, converting
-  pandas ↔ PySpark DataFrames.
-- **Column operations**: adding/casting columns, string ↔ double conversion,
-  array/string handling, `ArrayType` columns.
-- **Aggregation & counting**: `count_distinct`, aggregate functions, broadcasting a
-  DataFrame for join optimization.
-- **Maps & structs**: converting columns to a map and back.
-- **Date handling**: current date, adding months to a date column.
+All 19 notebooks in `notebooks/`, grouped by theme:
+
+- **DataFrame basics**: `pyspark_create_dataframe.ipynb`, `pyspark_create_dataframe_dictionary.ipynb`, `pandas_pyspark_dataframe.ipynb`, `pyspark_collect.ipynb`.
+- **Column operations**: `pyspark_add_new_column.ipynb`, `pyspark_cast_column.ipynb`, `pyspark_change_string_double.ipynb`, `pyspark_column_functions.ipynb`, `pyspark_column_operations.ipynb`, `convert_column_python_list.ipynb`, `pyspark_array_string.ipynb`, `pyspark_arraytype.ipynb`.
+- **Aggregation & counting**: `pyspark_aggregate.ipynb`, `pyspark_count_distinct.ipynb`, `pyspark_broadcast_dataframe.ipynb`.
+- **Maps & structs**: `pyspark_convert_columns_to_map.ipynb`, `pyspark_convert_map_to_columns.ipynb`.
+- **Date handling**: `current_date.ipynb`, `pyspark_add_month.ipynb`.
 
 ## Getting started
 
