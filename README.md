@@ -1,5 +1,3 @@
-### README.md
-
 # Algorithms and Data Structures
 
 Welcome to the Algorithms and Data Structures repository! This repository contains a collection of Jupyter notebooks covering various algorithms and data structures. It is designed to help you understand and implement fundamental algorithms and data structures in Python.
