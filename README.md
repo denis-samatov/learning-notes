@@ -26,6 +26,14 @@ Russian-language comments and markdown from when it was originally written --
 these are left as personal notes rather than translated, since they're not
 meant to be a polished public artifact.
 
+## Using the notebooks
+
+Start with the README in the section you want to explore. The PySpark notes
+have a [local setup guide](pyspark/README.md#getting-started); the genetic
+algorithm notebooks require DEAP, NumPy, and Matplotlib. Saved notebook
+outputs document earlier runs, not a fresh execution of the current
+environment. Dependencies are not locked, so results may vary across versions.
+
 ## License
 
 MIT -- see [LICENSE](LICENSE). Each section originally had its own MIT

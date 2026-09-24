@@ -20,21 +20,26 @@ All 19 notebooks in `notebooks/`, grouped by theme:
 
 ## Getting started
 
-1. Clone the repository:
+1. Clone the consolidated repository and enter this section:
     ```sh
-    git clone https://github.com/denis-samatov/pyspark_learning.git
-    cd pyspark_learning
+    git clone https://github.com/denis-samatov/learning-notes.git
+    cd learning-notes/pyspark
     ```
-2. Install PySpark and Jupyter:
+2. Ensure a Java runtime compatible with your PySpark release is available,
+   then create a Python environment and install the notebook dependencies:
     ```sh
-    python -m venv venv
-    source venv/bin/activate  # Windows: venv\Scripts\activate
-    pip install pyspark jupyter pandas
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python -m pip install pyspark notebook pandas
     ```
-3. Launch Jupyter and open any notebook in `notebooks/`:
+   On Windows, use `.venv\Scripts\activate` instead of the `source` command.
+3. Launch Jupyter and open a notebook in `notebooks/`:
     ```sh
-    jupyter notebook
+    jupyter notebook notebooks/
     ```
 
 Each notebook is self-contained — start with `pyspark_create_dataframe.ipynb` if
-you're new to PySpark, then explore the rest in any order.
+you're new to PySpark, then explore the rest in any order. The notebooks also
+contain historical `!pip install pyspark` cells; those are redundant after the
+environment setup above. Saved outputs are examples from earlier runs, and the
+repository does not pin dependency versions or run these notebooks in CI.
