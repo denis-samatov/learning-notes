@@ -32,7 +32,23 @@ Start with the README in the section you want to explore. The PySpark notes
 have a [local setup guide](pyspark/README.md#getting-started); the genetic
 algorithm notebooks require DEAP, NumPy, and Matplotlib. Saved notebook
 outputs document earlier runs, not a fresh execution of the current
-environment. Dependencies are not locked, so results may vary across versions.
+environment. `genetic-algorithms/requirements-tested.txt` records the partial
+locally tested profile; it is not a complete cross-platform lock.
+
+## Regression checks
+
+Run the extracted notebook contracts without rerunning network or cloud cells:
+
+```sh
+python -m pytest algorithms/tests genetic-algorithms/tests -q
+python -m pytest pyspark/tests -q
+```
+
+The GA checks need DEAP, NumPy and Matplotlib. PySpark runtime checks require
+PySpark and Java; see [pyspark/VALIDATION.md](pyspark/VALIDATION.md). The remediation run used an isolated
+PySpark4.2.1/Java21 environment and executed the three repaired notebooks;
+see the exact validation profile and limits in that guide. These small synthetic checks
+cover repaired examples, not every notebook or a performance claim.
 
 ## License
 
