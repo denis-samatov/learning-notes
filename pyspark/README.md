@@ -43,3 +43,10 @@ you're new to PySpark, then explore the rest in any order. The notebooks also
 contain historical `!pip install pyspark` cells; those are redundant after the
 environment setup above. Saved outputs are examples from earlier runs, and the
 repository does not pin dependency versions or run these notebooks in CI.
+
+## Runtime validation
+
+See [VALIDATION.md](VALIDATION.md) and `requirements-validation.txt` for the
+locally tested Python3.13 / PySpark4.2.1 / Java21 profile and the three-notebook
+acceptance command. Other notebook outputs remain historical and do not
+establish distributed performance or production use.
