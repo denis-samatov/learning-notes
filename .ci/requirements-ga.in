@@ -1,0 +1,2 @@
+-r ../genetic-algorithms/requirements-tested.txt
+pip-audit==2.10.1
