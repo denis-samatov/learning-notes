@@ -37,18 +37,27 @@ locally tested profile; it is not a complete cross-platform lock.
 
 ## Regression checks
 
-Run the extracted notebook contracts without rerunning network or cloud cells:
+The Python 3.13 CI workflow uses two independent hash-locked environments because the recorded GA and Spark profiles have different NumPy versions. For algorithms and GA:
 
 ```sh
-python -m pytest algorithms/tests genetic-algorithms/tests -q
-python -m pytest pyspark/tests -q
+python -m pip install --require-hashes -r .ci/requirements-ga.lock
+python -m pip check
+python -m pip_audit --no-deps --disable-pip --strict -r .ci/requirements-ga.lock
+MPLBACKEND=Agg python -m pytest algorithms/tests genetic-algorithms/tests -q
 ```
 
-The GA checks need DEAP, NumPy and Matplotlib. PySpark runtime checks require
-PySpark and Java; see [pyspark/VALIDATION.md](pyspark/VALIDATION.md). The remediation run used an isolated
-PySpark4.2.1/Java21 environment and executed the three repaired notebooks;
-see the exact validation profile and limits in that guide. These small synthetic checks
-cover repaired examples, not every notebook or a performance claim.
+In a separate environment, with Java 21 available:
+
+```sh
+python -m pip install --require-hashes -r .ci/requirements-spark.lock
+python -m pip check
+python -m pip_audit --no-deps --disable-pip --strict -r .ci/requirements-spark.lock
+python .ci/run_spark_tests.py
+```
+
+The Spark launcher binds a tiny `local[1]` session to loopback, clears inherited Spark runtime settings, runs in a temporary directory and stops the session in the fixture. It executes the three repaired notebook recipes and null/empty/schema/date assertions; the static test parses all 19 Spark notebooks. The GA tests check seeded repeatability and known minima; algorithm tests compare edge cases against brute-force oracles. These synthetic checks do not establish large-data performance or qualify every notebook's runtime.
+
+Regenerate GA hashes with `uv pip compile .ci/requirements-ga.in --python-version 3.13 --generate-hashes -o .ci/requirements-ga.lock`. `.ci/requirements-spark.in` records the complete pinned Python 3.13 Linux validation dependency closure; use `uv pip compile .ci/requirements-spark.in --no-deps --python-version 3.13 --generate-hashes -o .ci/requirements-spark.lock` to refresh hashes. Review and revalidate the closure when updating versions. Advisory checks cover these profiles, not every possible notebook environment. See [pyspark/VALIDATION.md](pyspark/VALIDATION.md) for runtime limits.
 
 ## License
 
