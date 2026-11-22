@@ -6,6 +6,23 @@ see each section's own commit history for its original timeline). None of
 this is original engineering; it's kept for personal reference and as a
 public record of learning-in-progress, not as showcase work.
 
+<p align="center">
+  <a href="algorithms/README.md"><img alt="Algorithms" src="https://img.shields.io/badge/Algorithms-6D28D9?style=for-the-badge" height="32"></a>
+  <a href="pyspark/README.md"><img alt="PySpark" src="https://img.shields.io/badge/PySpark-1D4ED8?style=for-the-badge" height="32"></a>
+  <a href="genetic-algorithms/README.md"><img alt="Genetic algorithms" src="https://img.shields.io/badge/Genetic%20algorithms-0F766E?style=for-the-badge" height="32"></a>
+  <a href="docker/README.md"><img alt="Docker reference" src="https://img.shields.io/badge/Docker%20reference-A12855?style=for-the-badge" height="32"></a>
+</p>
+
+<details>
+<summary>Open a concrete example</summary>
+
+- [Prefix sums and two pointers](algorithms/prefix_sums_and_two_pointers.ipynb) for array exercises.
+- [PySpark aggregation](pyspark/notebooks/pyspark_aggregate.ipynb) for DataFrame operations.
+- [DEAP walkthrough](genetic-algorithms/genetic_algorithm_1.ipynb) for a genetic algorithm notebook.
+- [Docker reference](docker/README.md) for looking up commands.
+
+</details>
+
 ## Sections
 
 - [`algorithms/`](algorithms/) -- Jupyter notebooks on binary search, binary
